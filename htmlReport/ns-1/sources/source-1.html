@@ -1,0 +1,128 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > CosineSolver</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">&lt;empty package name&gt;</a>
+</div>
+
+<h1>Coverage Summary for Class: CosineSolver (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">CosineSolver</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;import kotlin.math.pow
+&nbsp;
+&nbsp;/*
+&nbsp;??????? cos(x)
+&nbsp; */
+<b class="fc">&nbsp;class CosineSolver {</b>
+&nbsp;    fun approximateCosine(x: Double, iterations: Int): Double {
+<b class="fc">&nbsp;        var res = 1.0</b>
+<b class="fc">&nbsp;        for (iter in 1..iterations) {</b>
+<b class="fc">&nbsp;            val sign = if (iter % 2 == 1) -1.0 else 1.0</b>
+<b class="fc">&nbsp;            val add = sign * x.pow(2 * iter)</b>
+<b class="fc">&nbsp;            res += divideFactorial(add, iter * 2)</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return res</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    private fun divideFactorial(add: Double, n: Int): Double {
+<b class="fc">&nbsp;        var divi = add</b>
+<b class="fc">&nbsp;        for (i in 1..n) {</b>
+<b class="fc">&nbsp;            divi /= i.toDouble()</b>
+&nbsp;        }
+<b class="fc">&nbsp;        return divi</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-25 19:40</div>
+</div>
+</body>
+</html>
